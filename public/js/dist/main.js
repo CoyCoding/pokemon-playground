@@ -59,7 +59,7 @@
 })({
     "./assets/js/main.js": function(module, __webpack_exports__, __webpack_require__) {
         "use strict";
-        eval('__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _test__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./test */ "./assets/js/test.js");\n\nconsole.log(Object(_test__WEBPACK_IMPORTED_MODULE_0__[/* add */ "a"])()); // class Test {\n// \tmain = () => {\n// \t\tconsole.log(\'test\');\n// \t};\n// }\n// Test.main();\n\n//# sourceURL=webpack:///./assets/js/main.js?');
+        eval('__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _test__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./test */ "./assets/js/test.js");\n\nconsole.log(Object(_test__WEBPACK_IMPORTED_MODULE_0__[/* add */ "a"])());\n\nclass Test {\n  constructor() {\n    this.main = () => {\n      console.log(\'test\');\n    };\n  }\n\n}\n\nvar test = new Test();\ntest.main();\n\n//# sourceURL=webpack:///./assets/js/main.js?');
     },
     "./assets/js/test.js": function(module, __webpack_exports__, __webpack_require__) {
         "use strict";

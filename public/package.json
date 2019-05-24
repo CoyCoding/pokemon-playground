@@ -1,7 +1,7 @@
 {
-  "name": "pokemon",
-  "version": "1.0.0",
-  "description": "Base starter kit",
+  "name": "codingphase-dev-kit",
+  "version": "4.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -29,11 +29,11 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.4",
     "babel-preset-env": "^1.7.0",
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.5",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "gulp": "^4.0.2",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-edgejs": "^0.2.4",
     "gulp-imagemin": "^5.0.3",
@@ -64,13 +64,5 @@
     "@babel/plugin-transform-async-to-generator": "^7.1.0",
     "gulp-pug": "^4.0.1",
     "webpack-dev-server": "^3.1.14"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fluffytoycoy/pokemon-playground.git"
-  },
-  "bugs": {
-    "url": "https://github.com/fluffytoycoy/pokemon-playground/issues"
-  },
-  "homepage": "https://github.com/fluffytoycoy/pokemon-playground#readme"
+  }
 }

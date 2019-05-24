@@ -59,10 +59,14 @@
 })({
     "./assets/js/main.js": function(module, __webpack_exports__, __webpack_require__) {
         "use strict";
-        eval('__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _test__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./test */ "./assets/js/test.js");\n\nconsole.log(Object(_test__WEBPACK_IMPORTED_MODULE_0__[/* add */ "a"])());\n\nclass Test {\n  constructor() {\n    this.main = () => {\n      console.log(\'test\');\n    };\n  }\n\n}\n\nvar test = new Test();\ntest.main();\n\n//# sourceURL=webpack:///./assets/js/main.js?');
+        eval('__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _test__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./test */ "./assets/js/test.js");\n/* harmony import */ var _monster_monster__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./monster/monster */ "./assets/js/monster/monster.js");\n\n\nconsole.log();\nvar test = new _monster_monster__WEBPACK_IMPORTED_MODULE_1__[/* Monster */ "a"](\'ted\');\nconsole.log(test.getName());\n\n//# sourceURL=webpack:///./assets/js/main.js?');
+    },
+    "./assets/js/monster/monster.js": function(module, __webpack_exports__, __webpack_require__) {
+        "use strict";
+        eval('/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Monster; });\nclass Monster {\n  constructor(name) {\n    this.name = name;\n  }\n\n  getName() {\n    return this.name;\n  }\n\n}\n\n//# sourceURL=webpack:///./assets/js/monster/monster.js?');
     },
     "./assets/js/test.js": function(module, __webpack_exports__, __webpack_require__) {
         "use strict";
-        eval("/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"a\", function() { return add; });\nfunction add() {\n  return 'add';\n}\n\n//# sourceURL=webpack:///./assets/js/test.js?");
+        eval("/* unused harmony export add */\nfunction add() {\n  return 'add';\n}\n\n//# sourceURL=webpack:///./assets/js/test.js?");
     }
 });

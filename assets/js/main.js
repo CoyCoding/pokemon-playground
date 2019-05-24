@@ -1,12 +1,7 @@
 import { add } from './test';
+import { Monster } from './monster/monster';
 
-console.log(add());
+console.log();
 
-class Test {
-	main = () => {
-		console.log('test');
-	};
-}
-
-var test = new Test();
-test.main();
+var test = new Monster('ted');
+console.log(test.getName());

@@ -6,6 +6,11 @@ const babel = require('gulp-babel');
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
 
+gulp.task(img);
+gulp.task(scripts);
+gulp.task(styles);
+gulp.task(sync);
+
 gulp.task('default', series(styles, scripts, sync, img, (done) => {
   gulp.watch('./assets/sass/**/*', series(styles));
   gulp.watch('./assets/js/**/*', series(scripts));
@@ -20,8 +25,6 @@ function img(){
    .pipe(browserSync.stream());
 };
 
-gulp.task(img);
-gulp.task(scripts)
 function scripts() {
  return gulp.src('./assets/js/**/*.js')
      .pipe(

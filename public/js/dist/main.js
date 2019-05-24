@@ -57,7 +57,12 @@
     __webpack_require__.p = "";
     return __webpack_require__(__webpack_require__.s = "./assets/js/main.js");
 })({
-    "./assets/js/main.js": function(module, exports) {
-        eval("class Test {\n  constructor() {\n    this.main = () => {\n      console.log(swag);\n    };\n  }\n\n}\n\nTest.main();\n\n//# sourceURL=webpack:///./assets/js/main.js?");
+    "./assets/js/main.js": function(module, __webpack_exports__, __webpack_require__) {
+        "use strict";
+        eval('__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _test__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./test */ "./assets/js/test.js");\n\nconsole.log(Object(_test__WEBPACK_IMPORTED_MODULE_0__[/* add */ "a"])()); // class Test {\n// \tmain = () => {\n// \t\tconsole.log(\'test\');\n// \t};\n// }\n// Test.main();\n\n//# sourceURL=webpack:///./assets/js/main.js?');
+    },
+    "./assets/js/test.js": function(module, __webpack_exports__, __webpack_require__) {
+        "use strict";
+        eval("/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"a\", function() { return add; });\nfunction add() {\n  return 'add';\n}\n\n//# sourceURL=webpack:///./assets/js/test.js?");
     }
 });

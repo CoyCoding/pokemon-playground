@@ -9,3 +9,14 @@ export function shuffle(arr, num = 0) {
 	}
 	return arr;
 }
+
+export function createNodeWithClasses(nodeType, classArr) {
+	let node = document.createElement(nodeType);
+
+	if (classArr) {
+		classArr.forEach(className => {
+			node.classList.add(className);
+		});
+	}
+	return node;
+}

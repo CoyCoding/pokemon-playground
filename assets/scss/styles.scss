@@ -109,6 +109,32 @@ h1 {
               }
             }
           }
+          .poke-moves{
+            max-width: 360px;
+            margin: 10px auto 20px;
+            .move-grid{
+              display: grid;
+              grid-template-columns: 2fr 1fr;
+              margin: 0 auto;
+              row-gap: 5px;
+
+              .move-type{
+                text-align: center;
+                padding: 10px;
+                background: linear-gradient(33deg, blue, #101056 53%, #5074f5 101%, #007ec7);
+                color: white;
+                border-radius: 20px;
+              }
+              .move-name{
+                padding: 10px;
+                background: linear-gradient(#858484, #c5c2c2, #988383);
+                border-radius: 20px;
+                border-bottom-left-radius: 20px;
+                border-top-left-radius: 20px;
+                text-align: center;
+              }
+            }
+          }
         }
       }
     }

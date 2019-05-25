@@ -2,6 +2,7 @@ import { findMonsterById } from './monster/monsterLocators';
 import { monsterListLength } from './monster/monsterLocators';
 import { Move } from './monster/modles/move';
 import { shuffle } from './monster/utils';
+import { findMoveById } from './monster/moveLocator';
 
 var test = findMonsterById(1);
 test.addToMovePool(new Move(1, 'tackle', 'normal'));
@@ -10,7 +11,12 @@ selectRandomMovePool(test.learnableMoveIds);
 function selectRandomMovePool(movesList) {
 	//select Random Move Pool selects 4
 	//random moves from Learnable to create a moveset
-	console.log(shuffle(movesList, 4));
+	var moveList = shuffle(movesList, test.MAX_MOVES).slice(0, 4);
+	console.log(moveList);
+	for (let i = 0; i < moveList.length; i++) {
+		moveList[i] = findMoveById(moveList[i]);
+		console.log(moveList);
+	}
 }
 
 const pokemonImages = document.getElementsByClassName('poke-img');

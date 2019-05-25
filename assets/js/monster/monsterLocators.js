@@ -1,5 +1,5 @@
-import { monsterList } from './monsterList';
-import { Monster } from './monster';
+import { monsterList } from './data/monsterList';
+import { Monster } from './modles/monster';
 
 export function findMonsterById(id) {
 	const foundMonster = monsterList.find(monster => {

@@ -1,12 +1,11 @@
-import { add } from './test';
-import { Monster } from './monster/monster';
+import { Monster } from './monster/modles/monster';
 import { findMonsterById } from './monster/monsterLocators';
-console.log();
 
 // try {
 var test = findMonsterById(1);
 //console.log(test.getWeakness());
-test.getWeakness();
+test.getWeaknesses();
+test.getStrengths();
 // } catch (e) {
 // 	console.log(e.message);
 // }

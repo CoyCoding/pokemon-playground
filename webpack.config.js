@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const UglifyJS = require('uglify-es');
+
 const DefaultUglifyJsOptions = UglifyJS.default_options();
 const compress = DefaultUglifyJsOptions.compress;
 for (let compressOption in compress) {

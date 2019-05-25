@@ -1,5 +1,5 @@
 export const typeList = {
-	1: {
+	fire: {
 		weakness: [
 			{
 				id: 2,
@@ -21,7 +21,7 @@ export const typeList = {
 			}
 		]
 	},
-	2: {
+	water: {
 		weakness: [
 			{
 				id: 4,

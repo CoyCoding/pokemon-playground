@@ -59,7 +59,7 @@ h1 {
       max-width: 1400px;
 
       .monster {
-        background: linear-gradient(#fce9e9, #000000a1);
+        background: linear-gradient(#1a1919, rgba(0,0,0,0.631373));
         height: 100%;
         width: 100%;
         height: auto;
@@ -97,11 +97,16 @@ h1 {
             .poke-type{
               width: 150px;
                   text-align: center;
-                  background: linear-gradient(33deg, red, #929230a3);
+                  background: black;
                   color: #d1d1d1;
                   padding: 10px 0;
                   letter-spacing: .2rem;
-
+              &.water{
+                background: linear-gradient(33deg, blue, #101056 53%, #5074f5 101%, rgb(0, 126, 199));
+              }
+              &.fire{
+                background: linear-gradient(33deg, red, #929230a3);
+              }
             }
           }
         }

@@ -10,7 +10,9 @@ export function findMonsterById(id) {
 			foundMonster.id,
 			foundMonster.name,
 			foundMonster.types,
-			foundMonster.img
+			foundMonster.img,
+			foundMonster.learnableMoves,
+			foundMonster.movePool
 		);
 	} else {
 		throw new Error('monster not found');

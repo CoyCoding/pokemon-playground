@@ -1,15 +1,20 @@
 import { Type } from './type';
 
 export class Monster {
-	constructor(id, name, types, img) {
+	constructor(id, name, types, img, learnableMoves, movePool) {
 		this.id = id;
 		this.name = name;
 		this.types = createTypeArray(types);
 		this.img = img;
+		this.learnableMoves = learnableMoves;
+		this.movePool = movePool;
+	}
+	getMovePool() {
+		return this.movePool;
 	}
 
-	getName() {
-		return this.name;
+	setMovePool(movePool) {
+		this.movePool = movePool;
 	}
 
 	getWeaknesses() {

@@ -16,3 +16,7 @@ export function findMonsterById(id) {
 		throw new Error('monster not found');
 	}
 }
+
+export function monsterListLength() {
+	return monsterList.length;
+}

@@ -58,12 +58,28 @@ h1 {
         height: 60%;
         width: 100%;
         max-width: 1400px;
-    
+
     .monster{
-      background: red;
+      background: linear-gradient(#fce9e9, #000000a1);
       height: 100%;
       width: 100%;
       height: auto;
+      .img-wrapper{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background: #be1010d6;
+        margin: 20px;
+        .poke-img{
+          width: 50%;
+          height: auto;
+
+
+
+        }
+      }
     }
   }
 }

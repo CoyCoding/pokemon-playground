@@ -8,14 +8,17 @@ export class Monster {
 		this.img = img;
 		this.learnableMoveIds = learnableMovesIds;
 		this.movePool = movePool;
+		this.MAX_MOVES = 4;
 	}
 	getMovePool() {
 		return this.movePool;
 	}
 
 	addToMovePool(move) {
-		if (this.movePool.length >= 4) {
+		if (this.movePool.length >= this.MAX_MOVES) {
 			throw new Error('Move slots full');
+		} else if (this.movePool.some(move => move['id'] === move.id)) {
+			throw new Error('you know this move');
 		} else {
 			this.movePool.push(move);
 		}

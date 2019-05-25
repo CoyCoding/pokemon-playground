@@ -22,6 +22,8 @@ function loadPokemonImages() {
 		pokemonNames[i].innerHTML = test.name;
 		test.types.forEach(type => {
 			let node = document.createElement('h3');
+			console.log(node);
+			node.classList.add('poke-type');
 			let text = document.createTextNode(type.name);
 			node.appendChild(text);
 			pokemonTypes[i].appendChild(node);

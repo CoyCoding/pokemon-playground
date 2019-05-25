@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
 @import "reset";
 
-
-
 body {
   line-height: 1;
   background: white;
@@ -40,47 +38,74 @@ h1 {
   font-size: 50px;
 }
 
-#app{
+#app {
   height: 100vh;
-  .grid-wrapper{
+
+  .grid-wrapper {
     display: flex;
-    margin: 0px 50px;
+    margin: 0 50px;
     justify-content: center;
     align-items: center;
     height: 100%;
 
-  .grid{
-    display: -ms-grid;
-        display: grid;
-        grid-gap: 50px;
-        -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-        height: 60%;
-        width: 100%;
-        max-width: 1400px;
-
-    .monster{
-      background: linear-gradient(#fce9e9, #000000a1);
-      height: 100%;
+    .grid {
+      display: -ms-grid;
+      display: grid;
+      grid-gap: 50px;
+      -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      height: 60%;
       width: 100%;
-      height: auto;
-      .img-wrapper{
+      max-width: 1400px;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        background: #be1010d6;
-        margin: 20px;
-        .poke-img{
-          width: 50%;
-          height: auto;
+      .monster {
+        background: linear-gradient(#fce9e9, #000000a1);
+        height: 100%;
+        width: 100%;
+        height: auto;
 
+        .img-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+          background: #be1010d6;
+          margin: 20px;
 
+          .poke-img {
+            width: 50%;
+            height: auto;
+          }
+        }
 
+        .info {
+          .name-wrapper {
+            display: flex;
+            justify-content: center;
+            font-size: 2rem;
+            text-transform: capitalize;
+            font-weight: 600;
+            .poke-name {
+              margin-bottom: 20px;
+              letter-spacing: .3rem;
+            }
+          }
+
+          .poke-types{
+            display: flex;
+            justify-content: space-evenly;
+            .poke-type{
+              width: 150px;
+                  text-align: center;
+                  background: linear-gradient(33deg, red, #929230a3);
+                  color: #d1d1d1;
+                  padding: 10px 0;
+                  letter-spacing: .2rem;
+
+            }
+          }
         }
       }
     }
   }
-}
 }

@@ -6,6 +6,10 @@ export const monsterList = [
 			{
 				id: 1,
 				name: 'fire'
+			},
+			{
+				id: 2,
+				name: 'water'
 			}
 		],
 		img: 'https://www.smogon.com//dex/media/sprites/xy/braixen.gif'

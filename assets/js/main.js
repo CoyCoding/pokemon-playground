@@ -1,17 +1,18 @@
 import { findMonsterById } from './monster/monsterLocators';
 import { monsterListLength } from './monster/monsterLocators';
 import { Move } from './monster/modles/move';
+import { shuffle } from './monster/utils';
 
-// try {
 var test = findMonsterById(1);
 test.addToMovePool(new Move(1, 'tackle', 'normal'));
-test.addToMovePool(new Move(1, 'tackle', 'normal'));
-test.addToMovePool(new Move(1, 'tackle', 'normal'));
-test.addToMovePool(new Move(1, 'tackle', 'normal'));
-// } catch (e) {
-// 	console.log(e.message);
-// }
-console.log(test);
+selectRandomMovePool(test.learnableMoveIds);
+
+function selectRandomMovePool(movesList) {
+	//select Random Move Pool selects 4
+	//random moves from Learnable to create a moveset
+	console.log(shuffle(movesList, 4));
+}
+
 const pokemonImages = document.getElementsByClassName('poke-img');
 const pokemonNames = document.getElementsByClassName('poke-name');
 const pokemonTypes = document.getElementsByClassName('poke-types');
@@ -38,4 +39,3 @@ function createNodeWithClasses(nodeType, classArr) {
 	});
 	return node;
 }
-console.log(Math.floor(Math.random() * 10 + 1) + ' ' + monsterListLength());

@@ -8,7 +8,7 @@ export class Type {
 	}
 
 	//returns string value of type
-	getType() {
+	getName() {
 		return this.name;
 	}
 

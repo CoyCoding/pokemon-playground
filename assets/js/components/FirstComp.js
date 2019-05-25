@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+// import { Monster } from './monster/modles/monster';
+// import { findMonsterById } from './monster/monsterLocators';
 
 class Layout extends Component {
 	constructor() {
 		super();
 		this.state = {
-			name: 'Joe'
+			name: 'Joe',
+			img: findMonsterById(1).img
 		};
 	}
 	clickedBtn = () => {};
@@ -15,7 +18,7 @@ class Layout extends Component {
 			<div className="home">
 				<div className="Aligner">
 					<div className="Aligner-item">
-						<img src="/img/logo.png" />
+						<img src="this.state.img" />
 						<h1>Dev-Starter-Kit</h1>
 						<div className="menu">
 							<ul>

@@ -1,10 +1,11 @@
 import { Type } from './type';
 
 export class Monster {
-	constructor(id, name, types) {
+	constructor(id, name, types, img) {
 		this.id = id;
 		this.name = name;
 		this.types = createTypeArray(types);
+		this.img = img;
 	}
 
 	getName() {

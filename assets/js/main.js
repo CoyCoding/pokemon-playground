@@ -5,7 +5,8 @@ console.log();
 
 // try {
 var test = findMonsterById(1);
-console.log(test.getWeakness()[0].name);
+//console.log(test.getWeakness());
+test.getWeakness();
 // } catch (e) {
 // 	console.log(e.message);
 // }

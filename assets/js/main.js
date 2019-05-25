@@ -1,12 +1,17 @@
-// import { Monster } from './monster/modles/monster';
 import { findMonsterById } from './monster/monsterLocators';
 import { monsterListLength } from './monster/monsterLocators';
+import { Move } from './monster/modles/move';
 
 // try {
 var test = findMonsterById(1);
+test.addToMovePool(new Move(1, 'tackle', 'normal'));
+test.addToMovePool(new Move(1, 'tackle', 'normal'));
+test.addToMovePool(new Move(1, 'tackle', 'normal'));
+test.addToMovePool(new Move(1, 'tackle', 'normal'));
 // } catch (e) {
 // 	console.log(e.message);
 // }
+console.log(test);
 const pokemonImages = document.getElementsByClassName('poke-img');
 const pokemonNames = document.getElementsByClassName('poke-name');
 const pokemonTypes = document.getElementsByClassName('poke-types');

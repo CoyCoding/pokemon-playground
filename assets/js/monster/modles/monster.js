@@ -1,16 +1,24 @@
 import { Type } from './type';
 
 export class Monster {
-	constructor(id, name, types, img, learnableMoves, movePool) {
+	constructor(id, name, types, img, learnableMovesIds, movePool) {
 		this.id = id;
 		this.name = name;
 		this.types = createTypeArray(types);
 		this.img = img;
-		this.learnableMoves = learnableMoves;
+		this.learnableMoveIds = learnableMovesIds;
 		this.movePool = movePool;
 	}
 	getMovePool() {
 		return this.movePool;
+	}
+
+	addToMovePool(move) {
+		if (this.movePool.length >= 4) {
+			throw new Error('Move slots full');
+		} else {
+			this.movePool.push(move);
+		}
 	}
 
 	setMovePool(movePool) {

@@ -6,8 +6,7 @@ export function findMonsterById(id) {
 		return id === monster.id;
 	});
 	if (foundMonster) {
-		console.log(foundMonster);
-		return new Monster(foundMonster.id, foundMonster.name);
+		return new Monster(foundMonster.id, foundMonster.name, foundMonster.types);
 	} else {
 		throw new Error('monster not found');
 	}

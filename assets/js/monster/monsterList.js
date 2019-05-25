@@ -4,9 +4,8 @@ export const monsterList = [
 		name: 'dynamite',
 		types: [
 			{
-				type: 'fire',
-				weakness: 'water',
-				strengths: 'grass'
+				id: 1,
+				name: 'fire'
 			}
 		]
 	},
@@ -15,9 +14,8 @@ export const monsterList = [
 		name: 'fish',
 		types: [
 			{
-				type: 'water',
-				weakness: 'grass',
-				strengths: 'fire'
+				id: 2,
+				name: 'water'
 			}
 		]
 	}

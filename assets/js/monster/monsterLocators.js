@@ -1,6 +1,6 @@
 import { monsterList } from './data/monsterList';
 import { Monster } from './modles/monster';
-import { MonsterBuilder } from './MonsterBuilder';
+import { MonsterBuilder } from './modles/builders/monsterBuilder';
 
 export const MonsterLocator = {
 	findMonsterById: function(id) {

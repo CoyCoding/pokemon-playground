@@ -24,6 +24,9 @@ export const monsterList = [
 				id: 2,
 				name: 'water'
 			}
-		]
+		],
+		learnableMoves: [6, 2, 3, 4, 9, 7],
+		movePool: [],
+		img: 'https://www.smogon.com//dex/media/sprites/xy/braixen.gif'
 	}
 ];

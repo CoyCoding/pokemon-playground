@@ -1,11 +1,11 @@
-import { Move } from './modles/move';
+import { Move } from '../move';
 
 export const MoveBuilder = {
 	buildMove: function(object) {
 		try {
 			return new Move(object.id, object.name, object.type);
 		} catch (e) {
-			console.log('bad build');
+			console.log('bad move build');
 		}
 	}
 };

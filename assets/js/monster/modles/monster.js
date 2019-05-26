@@ -1,10 +1,11 @@
 import { Type } from './type';
+import { Move } from './move';
 
 export class Monster {
 	constructor(id, name, types, img, learnableMovesIds, movePool) {
 		this.id = id;
 		this.name = name;
-		this.types = createTypeArray(types);
+		this.types = types;
 		this.img = img;
 		this.learnableMoveIds = learnableMovesIds;
 		this.movePool = movePool;

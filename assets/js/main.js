@@ -3,12 +3,8 @@ import { Move } from './monster/modles/move';
 import { MoveLocator } from './monster/moveLocator';
 import { createNodeWithClasses } from './monster/utils';
 
-// var test = findMonsterById(1);
-// var movePool = createRandomMovePool(test.learnableMoveIds);
-// test.setMovePool(movePool);
-// console.log(test.movePool);
 var team = createPokemonTeam();
-team[0].setMovePool(MoveLocator.findRandomMoveSet(4, team[0].learnableMoveIds));
+setTeamMovePool(team);
 console.log(team);
 
 function createPokemonTeam() {
@@ -18,6 +14,14 @@ function createPokemonTeam() {
 		pokemonTeam.push(MonsterLocator.findRandomMonster());
 	}
 	return pokemonTeam;
+}
+
+function setTeamMovePool(monsterArr) {
+	monsterArr.forEach(monster => {
+		monster.setMovePool(
+			MoveLocator.findRandomMoveSet(4, team[0].learnableMoveIds)
+		);
+	});
 }
 
 const pokemonImages = document.getElementsByClassName('poke-img');

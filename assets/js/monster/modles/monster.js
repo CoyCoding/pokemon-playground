@@ -1,6 +1,3 @@
-import { Type } from './type';
-import { Move } from './move';
-
 export class Monster {
 	constructor(id, name, types, img, learnableMovesIds, movePool) {
 		this.id = id;
@@ -49,14 +46,4 @@ export class Monster {
 		console.log(typeArr);
 		return typeArr;
 	}
-}
-
-function createTypeArray(type) {
-	let i = 0;
-	let numOfTypes = type.length;
-	let typeArr = new Array();
-	for (i; i < numOfTypes; i++) {
-		typeArr.push(new Type(type[i].id, type[i].name));
-	}
-	return typeArr;
 }

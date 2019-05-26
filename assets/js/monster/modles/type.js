@@ -1,4 +1,4 @@
-import { typeList } from '../data/typeList';
+import { TypeMap } from '../data/typeMap';
 
 //Type takes id and the type to build a type object
 export class Type {
@@ -15,9 +15,9 @@ export class Type {
 	// takes the id of the current type and finds its weaknesses
 	// retunrs an array of Types
 	getWeaknesses() {
-		return typeList[this.name].weakness;
+		return TypeMap[this.name].weakness;
 	}
 	getStrengths() {
-		return typeList[this.name].strengths;
+		return TypeMap[this.name].strengths;
 	}
 }

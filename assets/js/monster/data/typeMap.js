@@ -1,4 +1,4 @@
-export const typeList = {
+export const TypeMap = {
 	fire: {
 		weakness: [
 			{

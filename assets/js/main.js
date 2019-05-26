@@ -2,10 +2,6 @@ import { MonsterLocator } from './monster/monsterLocators';
 import { MoveLocator } from './monster/moveLocator';
 import { createNodeWithClasses } from './monster/utils';
 
-var team = createPokemonTeam();
-setTeamMovePool(team);
-console.log(team);
-
 function createPokemonTeam() {
 	let MAX_TEAM = 6;
 	let pokemonTeam = [];
@@ -18,7 +14,7 @@ function createPokemonTeam() {
 function setTeamMovePool(monsterArr) {
 	monsterArr.forEach(monster => {
 		monster.setMovePool(
-			MoveLocator.findRandomMoveSet(4, team[0].learnableMoveIds)
+			MoveLocator.findRandomMoveSet(4, monster.learnableMoveIds)
 		);
 	});
 }
@@ -27,30 +23,65 @@ const pokemonImages = document.getElementsByClassName('poke-img');
 const pokemonNames = document.getElementsByClassName('poke-name');
 const pokemonTypes = document.getElementsByClassName('poke-types');
 const pokemonMoves = document.getElementsByClassName('move-grid');
-//
-// function loadPokemonImages() {
-// 	for (let i = 0; i < pokemonImages.length; i++) {
-// 		pokemonImages[i].src = test.img;
-// 		pokemonNames[i].innerHTML = test.name;
-// 		test.types.forEach(type => {
-// 			let typeName = document.createTextNode(type.name);
-// 			let pokeTypeNode = createNodeWithClasses('h3', [type.name, 'poke-type']);
-// 			pokeTypeNode.appendChild(typeName);
-// 			pokemonTypes[i].appendChild(pokeTypeNode);
-// 		});
-// 		test.movePool.forEach(move => {
-// 			let moveName = document.createTextNode(move.name);
-// 			let moveType = document.createTextNode(move.type);
-// 			let moveNameNode = createNodeWithClasses('div', ['move-name']);
-// 			let moveTypeNode = createNodeWithClasses('div', ['move-type']);
-// 			let moveNametextNode = createNodeWithClasses('h3');
-// 			let moveTypetextNode = createNodeWithClasses('h3');
-// 			moveNametextNode.appendChild(moveName);
-// 			moveTypetextNode.appendChild(moveType);
-// 			moveNameNode.appendChild(moveNametextNode);
-// 			moveTypeNode.appendChild(moveTypetextNode);
-// 			pokemonMoves[i].appendChild(moveNameNode);
-// 			pokemonMoves[i].appendChild(moveTypeNode);
-// 		});
-// 	}
-// }
+loadPokemonImages();
+
+function loadPokemon() {
+	MonsterLocator.findRandomMonster();
+}
+
+function loadPokemonImages() {
+	let team = createPokemonTeam();
+	setTeamMovePool(team);
+	for (let i = 0; i < pokemonImages.length; i++) {
+		setImageNode(team[i].img, pokemonImages[i]);
+		setNameNode(team[i].name, pokemonNames[i]);
+		setTypeNodes(team[i].types, pokemonTypes[i]);
+		setMoveNodes(team[i].movePool, pokemonMoves[i]);
+	}
+}
+
+function setTypeNodes(pokemonType, node) {
+	pokemonType.forEach(type => {
+		setTypeNode(type, node);
+	});
+}
+
+function setTypeNode(pokemonType, node) {
+	let typeName = document.createTextNode(pokemonType.name);
+	let pokeTypeNode = createNodeWithClasses('h3', [
+		pokemonType.name,
+		'poke-type'
+	]);
+	pokeTypeNode.appendChild(typeName);
+	node.appendChild(pokeTypeNode);
+}
+
+function setImageNode(imgSrc, node) {
+	node.src = imgSrc;
+}
+
+function setNameNode(pokemonName, node) {
+	node.innerHTML = pokemonName;
+}
+
+function setMoveNodes(moveArray, node) {
+	//appends a move array to a DOM node
+	moveArray.forEach(move => {
+		setMoveNode(move, node);
+	});
+}
+
+function setMoveNode(move, node) {
+	let moveName = document.createTextNode(move.name);
+	let moveType = document.createTextNode(move.type);
+	let moveNameNode = createNodeWithClasses('div', ['move-name']);
+	let moveTypeNode = createNodeWithClasses('div', ['move-type']);
+	let moveNametextNode = createNodeWithClasses('h3');
+	let moveTypetextNode = createNodeWithClasses('h3');
+	moveNametextNode.appendChild(moveName);
+	moveTypetextNode.appendChild(moveType);
+	moveNameNode.appendChild(moveNametextNode);
+	moveTypeNode.appendChild(moveTypetextNode);
+	node.appendChild(moveNameNode);
+	node.appendChild(moveTypeNode);
+}

@@ -35,7 +35,6 @@ export class Monster {
 				typeArr.push(weakness);
 			});
 		});
-		console.log(typeArr);
 		return typeArr;
 	}
 

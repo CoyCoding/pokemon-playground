@@ -42,7 +42,8 @@ module.exports = env => {
 				}
 			]
 		},
-		plugins: [
+		plugins:
+	[
 			new MiniCssExtractPlugin({
 				filename: 'styles.css' // 'style.[contenthash].css' put this if you want to get hashed files to cache bust
 			}),
@@ -55,6 +56,7 @@ module.exports = env => {
 			// }),
 			new WebpackMd5Hash()
 		],
+
 		optimization: {
 			splitChunks: {
 				chunks: 'all',

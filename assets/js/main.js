@@ -29,16 +29,29 @@ const pokemonTypes = document.getElementsByClassName('poke-types');
 const pokemonMoves = document.getElementsByClassName('move-grid');
 const pokeballBtn = document.getElementsByClassName('ball-btn');
 //loadPokemonImages();
+pokeballsOnClick();
 
-$('.ball-btn').click(() => {
-	let monster = MonsterLocator.findRandomMonster();
-	monster.setMovePool(createMovePool(monster));
-	loadPokemon(monster);
-	alert('click');
-});
+function pokeballsOnClick() {
+	for (let i = 0; i < pokeballBtn.length; i++) {
+		pokeballBtn[i].addEventListener('click', placePokemonInBall);
+	}
+	function placePokemonInBall() {
+		this.removeEventListener('click', placePokemonInBall);
+		let monster = MonsterLocator.findRandomMonster();
+		monster.setMovePool(createMovePool(monster));
+
+		let currentImgNode = getCurrentPokeImgNode(this);
+		loadPokemon(monster, currentImgNode);
+		this.closest('.ball').classList.add('opened');
+		currentImgNode.classList.add('opened');
+	}
+	function getCurrentPokeImgNode(node) {
+		return node.closest('.img-wrapper').getElementsByClassName('poke-img')[0];
+	}
+}
 
 function loadPokemon(pokemon, node) {
-	setImageNode(pokemon.img, pokemonImages[0]);
+	setImageNode(pokemon.img, node);
 }
 
 function loadPokemonImages() {

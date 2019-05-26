@@ -19,14 +19,26 @@ function setTeamMovePool(monsterArr) {
 	});
 }
 
+function createMovePool(monster) {
+	return MoveLocator.findRandomMoveSet(4, monster.learnableMoveIds);
+}
+
 const pokemonImages = document.getElementsByClassName('poke-img');
 const pokemonNames = document.getElementsByClassName('poke-name');
 const pokemonTypes = document.getElementsByClassName('poke-types');
 const pokemonMoves = document.getElementsByClassName('move-grid');
-loadPokemonImages();
+const pokeballBtn = document.getElementsByClassName('ball-btn');
+//loadPokemonImages();
 
-function loadPokemon() {
-	MonsterLocator.findRandomMonster();
+$('.ball-btn').click(() => {
+	let monster = MonsterLocator.findRandomMonster();
+	monster.setMovePool(createMovePool(monster));
+	loadPokemon(monster);
+	alert('click');
+});
+
+function loadPokemon(pokemon, node) {
+	setImageNode(pokemon.img, pokemonImages[0]);
 }
 
 function loadPokemonImages() {
@@ -57,7 +69,7 @@ function setTypeNode(pokemonType, node) {
 }
 
 function setImageNode(imgSrc, node) {
-	node.src = imgSrc;
+	node.style.backgroundImage = 'url(' + imgSrc + ')';
 }
 
 function setNameNode(pokemonName, node) {

@@ -45,36 +45,85 @@ h1 {
     display: flex;
     margin: 0 50px;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     height: 100%;
 
     .grid {
-      display: -ms-grid;
       display: grid;
       grid-gap: 50px;
-      -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-      height: 60%;
+      grid-template-columns: repeat(3, 1fr);
+      height: 100%;
       width: 100%;
-      max-width: 1400px;
+
+      padding: 25px 0;
 
       .monster {
         background: linear-gradient(#1a1919, rgba(0,0,0,0.631373));
         height: 100%;
         width: 100%;
         height: auto;
-
+        padding: 20px;
         .img-wrapper {
           display: flex;
           justify-content: center;
           align-items: center;
           padding: 20px;
-          background: #be1010d6;
-          margin: 20px;
-
+          background: white;
+          position: relative;
+          height: 100%;
           .poke-img {
-            width: 50%;
-            height: auto;
+            width: 200px;
+            height: 200px;
+            // background: url('https://www.smogon.com//dex/media/sprites/xy/braixen.gif');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+          }
+
+          .ball{
+            width: 70%;
+            position: absolute;
+            background: radial-gradient(circle at 20% 131%, #fff, rgba(0,0,0,0.541176) 10%, rgba(176,2,2,0.101961) 80%, #fff 100%),radial-gradient(circle at 50% -100%, #000, red 78%, red 68%, #efefef 76%);
+            border-radius: 50%;
+            overflow: hidden;
+            /* box-shadow: black 0px 20px 20px 0px; */
+            max-width: 373.33px;
+            display: flex;
+            justify-content: center;
+            border: solid black 1px;
+            box-shadow: black 6px 20px 20px -12px;
+            &:after{
+              content: '';
+              padding-top: 100%;
+              display: block;
+            }
+
+            .ball-line{
+              position: absolute;
+              width: 150%;
+              height: 74%;
+              border-radius: 50%;
+              top: -10%;
+              left: -24%;
+              border-bottom: black solid 1vw;
+            }
+              .ball-btn{
+                width: 25%;
+                height: 25%;
+                top: 49%;
+                position: absolute;
+                border-radius: 50%;
+                overflow: hidden;
+                max-width: 373.33px;
+                background: radial-gradient(circle at 50% 50%, #d7d7d7 49%, rgb(0, 0, 0) 60%, rgb(86, 85, 85) 35%, #fff 100%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: solid black .5vw;
+                box-shadow: black 0px 0px 1vw 0px;
+
+
+            }
           }
         }
 

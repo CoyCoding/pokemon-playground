@@ -4,7 +4,6 @@ import { MoveBuilder } from './moveBuilder';
 
 export const MonsterBuilder = {
 	buildMonster: function(object) {
-		console.log(buildTypes(object.types));
 		try {
 			return new Monster(
 				object.id,

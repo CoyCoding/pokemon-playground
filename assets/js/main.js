@@ -1,5 +1,4 @@
 import { MonsterLocator } from './monster/monsterLocators';
-import { Move } from './monster/modles/move';
 import { MoveLocator } from './monster/moveLocator';
 import { createNodeWithClasses } from './monster/utils';
 

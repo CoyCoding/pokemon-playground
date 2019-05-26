@@ -1,7 +1,7 @@
 import { Move } from './modles/move';
 
 export const MoveBuilder = {
-	buildMonster: function(object) {
+	buildMove: function(object) {
 		try {
 			return new Move(object.id, object.name, object.type);
 		} catch (e) {

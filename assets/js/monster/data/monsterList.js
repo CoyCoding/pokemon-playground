@@ -13,8 +13,7 @@ export const monsterList = [
 			}
 		],
 		learnableMoves: [1, 5, 3, 4, 9, 7],
-		movePool: [],
-		img: 'https://www.smogon.com//dex/media/sprites/xy/braixen.gif'
+		movePool: []
 	},
 	{
 		id: 2,
@@ -26,8 +25,7 @@ export const monsterList = [
 			}
 		],
 		learnableMoves: [6, 2, 3, 4, 9, 7],
-		movePool: [],
-		img: 'https://www.smogon.com//dex/media/sprites/xy/alomomola.gif'
+		movePool: []
 	},
 	{
 		id: 2,
@@ -43,8 +41,7 @@ export const monsterList = [
 			}
 		],
 		learnableMoves: [6, 2, 3, 4, 9, 7],
-		movePool: [],
-		img: 'https://www.smogon.com/dex/media/sprites/xy/abomasnow.gif'
+		movePool: []
 	},
 	{
 		id: 3,
@@ -56,8 +53,7 @@ export const monsterList = [
 			}
 		],
 		learnableMoves: [6, 2, 3, 4, 9, 7],
-		movePool: [],
-		img: 'https://www.smogon.com/dex/media/sprites/xy/abra.gif'
+		movePool: []
 	},
 	{
 		id: 4,
@@ -73,8 +69,7 @@ export const monsterList = [
 			}
 		],
 		learnableMoves: [6, 2, 3, 4, 9, 7],
-		movePool: [],
-		img: 'https://www.smogon.com/dex/media/sprites/xy/aron.gif'
+		movePool: []
 	},
 	{
 		id: 4,
@@ -90,7 +85,6 @@ export const monsterList = [
 			}
 		],
 		learnableMoves: [6, 2, 3, 4, 9, 7],
-		movePool: [],
-		img: 'https://www.smogon.com//dex/media/sprites/xy/beedrill.gif'
+		movePool: []
 	}
 ];

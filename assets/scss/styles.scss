@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
+@import "type-backgrounds";
 @import "reset";
 
 body {
@@ -59,7 +60,7 @@ h1 {
       padding: 25px 0;
 
       .monster {
-        background: linear-gradient(#1a1919, rgba(0,0,0,0.631373));
+        background: linear-gradient(#ffffff, rgb(94, 94, 94));
         height: 100%;
         width: 100%;
         height: auto;
@@ -193,13 +194,6 @@ h1 {
                   margin-right: 10px;
                   margin-left: 10px;
                 }
-                &.water {
-                  background: linear-gradient(33deg, blue, #101056 53%, #5074f5 101%, rgb(0, 126, 199));
-                }
-
-                &.fire {
-                  background: linear-gradient(33deg, red, #929230a3);
-                }
               }
 
           }
@@ -226,11 +220,13 @@ h1 {
               justify-content: center;
               align-items: center;
             }
-            .move {
-                background: red;
+            .move-name {
+              font-weight: 600;
+              text-shadow: black 0 0 10px;
               }
-              .type {
-                background: blue;
+              .move-type {
+                font-weight: 600;
+                text-shadow: black 0 0 10px;
                 }
           }
         }

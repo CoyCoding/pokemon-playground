@@ -1,9 +1,12 @@
-import { MonsterLocator } from './monster/monsterLocators';
-import { MoveLocator } from './monster/moveLocator';
+// import { MonsterLocator } from './monster/monsterLocators';
+// import { MoveLocator } from './monster/moveLocator';
+import { MonsterGenerator } from './monster/MonsterGenerator';
 import { createNodeWithClasses } from './monster/utils';
 
+console.log(MonsterGenerator.generateMonsters());
+console.log(MonsterGenerator.generateMonsters(6));
+
 function createPokemonTeam() {
-	let MAX_TEAM = 6;
 	let pokemonTeam = [];
 	for (let i = 0; i < MAX_TEAM; i++) {
 		pokemonTeam.push(MonsterLocator.findRandomMonster());
@@ -29,7 +32,6 @@ const pokemonTypes = document.getElementsByClassName('poke-types');
 const pokemonMoves = document.getElementsByClassName('move-grid');
 const pokeballBtn = document.getElementsByClassName('ball-btn');
 //loadPokemonImages();
-pokeballsOnClick();
 
 function pokeballsOnClick() {
 	for (let i = 0; i < pokeballBtn.length; i++) {

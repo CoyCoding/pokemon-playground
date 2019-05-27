@@ -6,7 +6,7 @@ import { createNodeWithClasses } from './monster/utils';
 
 var monster = MonsterGenerator.generateMonsters(1);
 var team = createPokemonTeam();
-createMovePoolFor(team);
+createMovePoolFor(monster);
 console.log(team);
 
 // const pokemonImages = document.getElementsByClassName('poke-img');
@@ -23,14 +23,22 @@ function pokeballsOnClick() {
 
 	function placePokemonInBall() {
 		this.removeEventListener('click', placePokemonInBall);
-		let currentImgNode = getCurrentPokeImgNode(this);
-		loadPokemon(MonsterGenerator.generateMonsters(1), currentImgNode);
+		let currentImgNode = getClosest(this, '.poke-img');
+		let currentNameNode = getClosest(this, '.poke-name');
+		let currentTypeNode = getClosest(this, '.poke-types');
+		let currentMoveNode = getClosest(this, '.moves');
+		let monster = createMonsterWithMoves();
+		setNameNode(monster, currentNameNode);
+		setTypeNodes(monster, currentTypeNode);
+		setMoveNodes(monster.movePool, currentMoveNode);
+		loadMonsterInfo(monster, currentImgNode);
+		//setMoveNode(monster, currentMoveNode);
 		getCurrentPokeBall(this).classList.add('opened');
 		currentImgNode.classList.add('opened');
 	}
 
-	function getCurrentPokeImgNode(node) {
-		return node.closest('.monster-info').querySelector('.poke-img');
+	function getClosest(node, className) {
+		return node.closest('.monster-info').querySelector(className);
 	}
 
 	function getCurrentPokeBall(node) {
@@ -38,7 +46,7 @@ function pokeballsOnClick() {
 	}
 }
 
-function loadPokemon(pokemon, node) {
+function loadMonsterInfo(pokemon, node) {
 	setImageNode(pokemon.img, node);
 }
 
@@ -64,11 +72,15 @@ function createMovePoolFor(monsterArr) {
 	MonsterModifier.generateRandomMoves(monsterArr, 4);
 }
 
+function createMonsterWithMoves() {
+	var monster = MonsterGenerator.generateMonsters(1);
+	createMovePoolFor(monster);
+	return monster;
+}
 //HTML based functions
-function setTypeNodes(pokemonType, node) {
-	pokemonType.forEach(type => {
-		setTypeNode(type, node);
-	});
+
+function setNameNode(monster, node) {
+	node.innerHTML = monster.name;
 }
 
 function setTypeNode(pokemonType, node) {
@@ -85,17 +97,6 @@ function setImageNode(imgSrc, node) {
 	node.style.backgroundImage = 'url(' + imgSrc + ')';
 }
 
-function setNameNode(pokemonName, node) {
-	node.innerHTML = pokemonName;
-}
-
-function setMoveNodes(moveArray, node) {
-	//appends a move array to a DOM node
-	moveArray.forEach(move => {
-		setMoveNode(move, node);
-	});
-}
-
 function setMoveNode(move, node) {
 	let moveName = document.createTextNode(move.name);
 	let moveType = document.createTextNode(move.type);
@@ -109,4 +110,18 @@ function setMoveNode(move, node) {
 	moveTypeNode.appendChild(moveTypetextNode);
 	node.appendChild(moveNameNode);
 	node.appendChild(moveTypeNode);
+}
+
+function setMoveNodes(moveArray, node) {
+	//appends a move array to a DOM node
+	moveArray.forEach(move => {
+		setMoveNode(move, node);
+	});
+}
+
+function setTypeNodes(pokemon, node) {
+	console.log(pokemon);
+	pokemon.types.forEach(type => {
+		setTypeNode(type, node);
+	});
 }

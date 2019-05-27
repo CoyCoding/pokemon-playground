@@ -23,7 +23,7 @@ gulp.task(
 			)
 			.pipe(
 				autoprefixer({
-					browsers: ['last 2 versions']
+					browsers: ['> 0%']
 				})
 			)
 			.pipe(gulp.dest('./public/css'))

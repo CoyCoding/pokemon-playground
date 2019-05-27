@@ -1,25 +1,22 @@
 // import { MonsterLocator } from './monster/monsterLocators';
 // import { MoveLocator } from './monster/moveLocator';
-import { MonsterGenerator } from './monster/MonsterGenerator';
+import { MonsterGenerator } from './monster/monsterGenerator';
+import { MonsterModifier } from './monster/monsterModifier';
 import { createNodeWithClasses } from './monster/utils';
 
-console.log(MonsterGenerator.generateMonsters());
-console.log(MonsterGenerator.generateMonsters(6));
+console.log(createPokemonTeam());
+var team = createPokemonTeam();
+console.log(team);
+setTeamMovePool(team);
+console.log(team);
 
 function createPokemonTeam() {
-	let pokemonTeam = [];
-	for (let i = 0; i < MAX_TEAM; i++) {
-		pokemonTeam.push(MonsterLocator.findRandomMonster());
-	}
-	return pokemonTeam;
+	//creates a 6 monster team with no moves.
+	return MonsterGenerator.generateMonsters(6);
 }
 
 function setTeamMovePool(monsterArr) {
-	monsterArr.forEach(monster => {
-		monster.setMovePool(
-			MoveLocator.findRandomMoveSet(4, monster.learnableMoveIds)
-		);
-	});
+	MonsterModifier.generateRandomMoves(monsterArr, 4);
 }
 
 function createMovePool(monster) {
@@ -37,6 +34,7 @@ function pokeballsOnClick() {
 	for (let i = 0; i < pokeballBtn.length; i++) {
 		pokeballBtn[i].addEventListener('click', placePokemonInBall);
 	}
+
 	function placePokemonInBall() {
 		this.removeEventListener('click', placePokemonInBall);
 		let monster = MonsterLocator.findRandomMonster();
@@ -47,6 +45,7 @@ function pokeballsOnClick() {
 		this.closest('.ball').classList.add('opened');
 		currentImgNode.classList.add('opened');
 	}
+
 	function getCurrentPokeImgNode(node) {
 		return node.closest('.img-wrapper').getElementsByClassName('poke-img')[0];
 	}

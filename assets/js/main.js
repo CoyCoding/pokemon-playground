@@ -24,7 +24,7 @@ function pokeballsOnClick() {
 	function placePokemonInBall() {
 		this.removeEventListener('click', placePokemonInBall);
 		let currentImgNode = getClosest(this, '.poke-img');
-		let currentNameNode = getClosest(this, '.poke-name');
+		let currentNameNode = getClosest(this, '.name-wrapper');
 		let currentTypeNode = getClosest(this, '.poke-types');
 		let currentMoveNode = getClosest(this, '.moves');
 		let monster = createMonsterWithMoves();
@@ -32,7 +32,7 @@ function pokeballsOnClick() {
 		setTypeNodes(monster, currentTypeNode);
 		setMoveNodes(monster.movePool, currentMoveNode);
 		loadMonsterInfo(monster, currentImgNode);
-		//setMoveNode(monster, currentMoveNode);
+		initNodes([currentNameNode, currentTypeNode, currentMoveNode]);
 		getCurrentPokeBall(this).classList.add('opened');
 		currentImgNode.classList.add('opened');
 	}
@@ -43,6 +43,12 @@ function pokeballsOnClick() {
 
 	function getCurrentPokeBall(node) {
 		return node.closest('.ball');
+	}
+
+	function initNodes(nodeArr) {
+		nodeArr.forEach(node => {
+			node.classList.add('loaded');
+		});
 	}
 }
 
@@ -80,7 +86,10 @@ function createMonsterWithMoves() {
 //HTML based functions
 
 function setNameNode(monster, node) {
-	node.innerHTML = monster.name;
+	let name = document.createTextNode(monster.name);
+	let nameNode = createNodeWithClasses('h3', ['poke-name']);
+	nameNode.appendChild(name);
+	node.appendChild(nameNode);
 }
 
 function setTypeNode(pokemonType, node) {

@@ -1,9 +1,9 @@
 export class Monster {
-	constructor(id, name, types, img, learnableMovesIds, movePool) {
+	constructor(id, name, types, imgSrc, learnableMovesIds, movePool) {
 		this.id = id;
 		this.name = name;
 		this.types = types;
-		this.img = img;
+		this.img = imgSrc;
 		this.learnableMoveIds = learnableMovesIds;
 		this.movePool = movePool;
 		this.MAX_MOVES = 4;

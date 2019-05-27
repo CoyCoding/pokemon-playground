@@ -18,7 +18,7 @@ export const monsterList = [
 	},
 	{
 		id: 2,
-		name: 'fish',
+		name: 'Alomomola',
 		types: [
 			{
 				id: 2,
@@ -27,6 +27,70 @@ export const monsterList = [
 		],
 		learnableMoves: [6, 2, 3, 4, 9, 7],
 		movePool: [],
-		img: 'https://www.smogon.com//dex/media/sprites/xy/braixen.gif'
+		img: 'https://www.smogon.com//dex/media/sprites/xy/alomomola.gif'
+	},
+	{
+		id: 2,
+		name: 'Abomasnow',
+		types: [
+			{
+				id: 0,
+				name: 'grass'
+			},
+			{
+				id: 0,
+				name: 'ice'
+			}
+		],
+		learnableMoves: [6, 2, 3, 4, 9, 7],
+		movePool: [],
+		img: 'https://www.smogon.com/dex/media/sprites/xy/abomasnow.gif'
+	},
+	{
+		id: 3,
+		name: 'Abra',
+		types: [
+			{
+				id: 2,
+				name: 'psychic'
+			}
+		],
+		learnableMoves: [6, 2, 3, 4, 9, 7],
+		movePool: [],
+		img: 'https://www.smogon.com/dex/media/sprites/xy/abra.gif'
+	},
+	{
+		id: 4,
+		name: 'aron',
+		types: [
+			{
+				id: 0,
+				name: 'steel'
+			},
+			{
+				id: 0,
+				name: 'rock'
+			}
+		],
+		learnableMoves: [6, 2, 3, 4, 9, 7],
+		movePool: [],
+		img: 'https://www.smogon.com/dex/media/sprites/xy/aron.gif'
+	},
+	{
+		id: 4,
+		name: 'beedrill',
+		types: [
+			{
+				id: 0,
+				name: 'steel'
+			},
+			{
+				id: 0,
+				name: 'rock'
+			}
+		],
+		learnableMoves: [6, 2, 3, 4, 9, 7],
+		movePool: [],
+		img: 'https://www.smogon.com//dex/media/sprites/xy/beedrill.gif'
 	}
 ];

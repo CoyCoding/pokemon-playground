@@ -9,7 +9,7 @@ export const MonsterBuilder = {
 				object.id,
 				object.name,
 				buildTypes(object.types),
-				object.img,
+				buildImgSrc(object.name),
 				object.learnableMoves,
 				buildMoves(object.movePool)
 			);
@@ -33,4 +33,10 @@ function buildMoves(arr) {
 		moveArray.push(MoveBuilder.buildMove(move));
 	});
 	return moveArray;
+}
+
+function buildImgSrc(name) {
+	return (
+		'https://www.smogon.com/dex/media/sprites/xy/' + name.toLowerCase() + '.gif'
+	);
 }

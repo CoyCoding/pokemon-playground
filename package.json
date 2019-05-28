@@ -1,6 +1,9 @@
 {
   "name": "pokemon",
   "version": "1.0.0",
+  "engines": {
+  "node": "10.15.0"
+},
   "description": "Base starter kit",
   "main": "index.js",
   "scripts": {

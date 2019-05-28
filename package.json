@@ -68,7 +68,8 @@
     "@babel/plugin-transform-async-to-generator": "^7.1.0",
     "gulp-pug": "^4.0.1",
     "jquery": "^3.4.1",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.1.14",
+        "gulp": "^4.0.2"
   },
   "repository": {
     "type": "git",

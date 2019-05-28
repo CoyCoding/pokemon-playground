@@ -1,5 +1,5 @@
 import {typeList} from './data/typeList'
-import { Type } from './modles/monster'
+import { Type } from './modles/type'
 
 // export function findTypeName(name){
 //   const foundType = typeList.find(type=>{

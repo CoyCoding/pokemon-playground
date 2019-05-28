@@ -2,7 +2,7 @@
 // import { MoveLocator } from './monster/moveLocator';
 import { MonsterGenerator } from './monster/monsterGenerator';
 import { MonsterModifier } from './monster/monsterModifier';
-import { MonsterDom } from './monster/monsterDOM';
+import { MonsterDom } from './monster/monsterDom';
 
 const pokeballBtn = document.getElementsByClassName('ball-btn');
 

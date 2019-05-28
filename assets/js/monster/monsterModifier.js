@@ -1,4 +1,4 @@
-import { MoveLocator } from './MoveLocator';
+import { MoveLocator } from './moveLocator';
 
 export const MonsterModifier = {
 	generateRandomMoves: function(monsters) {

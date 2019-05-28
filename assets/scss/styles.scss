@@ -54,7 +54,7 @@ h1 {
       display: grid;
       grid-gap: 50px;
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, minmax(auto, 415px));
+      grid-template-rows: repeat(2, 1fr);
       height: 100%;
       width: 100%;
       padding: 25px 0;

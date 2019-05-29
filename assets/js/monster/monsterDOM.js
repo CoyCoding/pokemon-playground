@@ -9,7 +9,6 @@ export const MonsterDom = {
 	},
 
 	setTypeNode: function(pokemonType, node) {
-		console.log(pokemonType);
 		let typeName = document.createTextNode(pokemonType.name);
 		let pokeTypeNode = createNodeWithClasses('h3', [
 			pokemonType.name,
@@ -39,15 +38,12 @@ export const MonsterDom = {
 	},
 
 	setMoveNodes: function(moveArray, node) {
-		//appends a move array to a DOM node
-		moveArray.forEach(move => {
-			console.log(move.move);
-			this.setMoveNode(move.move, node);
-		});
+		for (let i = 0; i < moveArray.length; i++) {
+			this.setMoveNode(moveArray[i], node);
+		}
 	},
 
 	setTypeNodes: function(pokemon, node) {
-		console.log(pokemon);
 		pokemon.types.forEach(type => {
 			this.setTypeNode(type, node);
 		});

@@ -24,9 +24,7 @@ export class MoveLocator {
 		return new Promise(resolve => {
 			var newList = shuffle(moveList, numOfMoves).slice(0, numOfMoves);
 			for (let i = 0; i < newList.length; i++) {
-				this.findMove(moveList[i].move.name).then(res => {
-					newList[i] = res;
-				});
+				newList[i] = this.findMove(moveList[i].move.name);
 			}
 			resolve(newList);
 		});

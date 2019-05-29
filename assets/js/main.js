@@ -30,22 +30,21 @@ function initPokeballs() {
 		let currentTypeNode = getClosest(this, '.poke-types');
 		let currentMoveNode = getClosest(this, '.moves');
 		monsterLocator.locateRandomPokemon().then(monster => {
-			moveLocator
-				.locateRandomMoveSet(4, monster.learnableMoves)
-				.then(res => {
-					monster.setMovePool(res);
-				})
-				.then(() => {
-					MonsterDom.setNameNode(monster, currentNameNode);
-					MonsterDom.setTypeNodes(monster, currentTypeNode);
-					console.log('move pool placePokemonInBall()');
-					console.log(monster.movePool);
-					MonsterDom.setMoveNodes(monster.movePool, currentMoveNode);
-					MonsterDom.setImageNode(monster.img, currentImgNode);
-					initNodes([currentNameNode, currentTypeNode, currentMoveNode]);
-					getCurrentPokeBall(this).classList.add('opened');
-					currentImgNode.classList.add('opened');
-				});
+			moveLocator.locateRandomMoveSet(4, monster.learnableMoves).then(res => {
+				Promise.all(res)
+					.then(res => {
+						monster.setMovePool(res);
+					})
+					.then(() => {
+						MonsterDom.setNameNode(monster, currentNameNode);
+						MonsterDom.setTypeNodes(monster, currentTypeNode);
+						MonsterDom.setMoveNodes(monster.movePool, currentMoveNode);
+						MonsterDom.setImageNode(monster.img, currentImgNode);
+						initNodes([currentNameNode, currentTypeNode, currentMoveNode]);
+						getCurrentPokeBall(this).classList.add('opened');
+						currentImgNode.classList.add('opened');
+					});
+			});
 		});
 	}
 

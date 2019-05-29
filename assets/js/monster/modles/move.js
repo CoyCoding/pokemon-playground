@@ -3,4 +3,11 @@ export class Move {
 		this.name = name;
 		this.type = type;
 	}
+
+	getName() {
+		return this.name;
+	}
+	getType() {
+		return this.type;
+	}
 }

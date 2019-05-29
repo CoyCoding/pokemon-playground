@@ -16,7 +16,6 @@ compress.unused = true;
 module.exports = env => {
 	return {
 		entry: {
-			FirstComp: './assets/js/components/FirstComp.js',
 			main: './assets/js/main.js'
 		},
 		output: {
@@ -59,7 +58,7 @@ module.exports = env => {
 
 		optimization: {
 			splitChunks: {
-				chunks: 'all',
+				// chunks: 'all',
 				minSize: 0
 			},
 			minimize: true,

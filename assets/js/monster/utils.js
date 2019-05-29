@@ -20,3 +20,7 @@ export function createNodeWithClasses(nodeType, classArr) {
 	}
 	return node;
 }
+
+export function generateRandomIndex(maxCount) {
+	return Math.floor(Math.random() * maxCount);
+}

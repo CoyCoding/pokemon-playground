@@ -1,3 +1,4 @@
+import { MonsterDom } from './monster/monsterDom';
 import { MonsterLocator } from './monster/monsterLocators';
 const PokemonApi = require('pokeapi-js-wrapper');
 
@@ -12,10 +13,14 @@ var monsterLocator = new MonsterLocator(new PokemonApi.Pokedex(options));
 
 const pokeballBtn = document.getElementsByClassName('ball-btn');
 initPokeballs();
-monsterLocator.locateRandomPokemon().then(monster => {
-	console.log('inside');
-	console.log(monster);
-});
+
+console.log(getRandom());
+async function getRandom() {
+	const monster = await monsterLocator.locateRandomPokemon();
+	return monster;
+}
+
+// console.log(monsterLocator.locateRandomPokemon());
 
 function initPokeballs() {
 	for (let i = 0; i < pokeballBtn.length; i++) {
@@ -28,14 +33,15 @@ function initPokeballs() {
 		let currentNameNode = getClosest(this, '.name-wrapper');
 		let currentTypeNode = getClosest(this, '.poke-types');
 		let currentMoveNode = getClosest(this, '.moves');
-		let monster = createMonsterWithMoves();
-		MonsterDom.setNameNode(monster, currentNameNode);
-		MonsterDom.setTypeNodes(monster, currentTypeNode);
-		MonsterDom.setMoveNodes(monster.movePool, currentMoveNode);
-		MonsterDom.setImageNode(monster.img, currentImgNode);
-		initNodes([currentNameNode, currentTypeNode, currentMoveNode]);
-		getCurrentPokeBall(this).classList.add('opened');
-		currentImgNode.classList.add('opened');
+		monsterLocator.locateRandomPokemon().then(monster => {
+			MonsterDom.setNameNode(monster, currentNameNode);
+			MonsterDom.setTypeNodes(monster, currentTypeNode);
+			MonsterDom.setMoveNodes(monster.movePool, currentMoveNode);
+			MonsterDom.setImageNode(monster.img, currentImgNode);
+			initNodes([currentNameNode, currentTypeNode, currentMoveNode]);
+			getCurrentPokeBall(this).classList.add('opened');
+			currentImgNode.classList.add('opened');
+		});
 	}
 
 	function getClosest(node, className) {

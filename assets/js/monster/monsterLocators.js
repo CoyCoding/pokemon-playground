@@ -47,36 +47,37 @@ export class MonsterLocator {
 		return this.pokemonApi;
 	}
 
-	async getPokemonCount() {
-		console.log('running');
-		if (!Number.isInteger(this.pokemonCount)) {
-			await this.pokemonApi
-				.getPokemonSpeciesList({ limit: 1, offset: 0 })
-				.then(response => {
-					this.pokemonCount = response.count;
-				});
-			return this.pokemonCount;
-		} else {
-			return this.pokemonCount;
-		}
-	}
-
-	async locateRandomPokemon() {
-		console.log('locate random');
-		let monster;
-		await this.getPokemonCount().then(res => {
-			let index = generateRandomIndex(res);
-			this.findMonsterByIndex(index, res).then(response => {
-				monster = MonsterBuilder.buildMonster(response);
-			});
-			return monster;
+	getPokemonCount() {
+		return new Promise(resolve => {
+			console.log('running');
+			if (!Number.isInteger(this.pokemonCount)) {
+				this.pokemonApi
+					.getPokemonSpeciesList({ limit: 1, offset: 0 })
+					.then(response => {
+						this.pokemonCount = response.count;
+						resolve(response.count);
+					});
+			} else {
+				resolve(this.pokemonCount);
+			}
 		});
 	}
 
-	async findMonsterByIndex(index, count) {
-		console.log(index);
+	locateRandomPokemon() {
+		console.log('locate random');
+		return new Promise(resolve => {
+			this.getPokemonCount().then(res => {
+				this.findMonsterByIndex(generateRandomIndex(res)).then(res => {
+					var monster = MonsterBuilder.buildMonster(res);
+					resolve(monster);
+				});
+			});
+		});
+	}
+
+	async findMonsterByIndex(index) {
 		var test;
-		if (index < count && index >= 0) {
+		if (index < this.pokemonCount && index >= 0) {
 			await this.pokemonApi.getPokemonByName(index).then(res => {
 				test = res;
 			});

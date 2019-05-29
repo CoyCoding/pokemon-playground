@@ -9,6 +9,7 @@ export const MonsterDom = {
 	},
 
 	setTypeNode: function(pokemonType, node) {
+		console.log(pokemonType);
 		let typeName = document.createTextNode(pokemonType.name);
 		let pokeTypeNode = createNodeWithClasses('h3', [
 			pokemonType.name,

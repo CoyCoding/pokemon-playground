@@ -4,16 +4,14 @@ import { MoveBuilder } from './moveBuilder';
 
 export const MonsterBuilder = {
 	buildMonster: function(object) {
-		console.log(object);
 		try {
 			return new Monster(
 				object.id,
 				object.name,
 				buildTypes(object.types),
 				buildImgSrc(object.name),
-				object.learnableMoves,
-				object.moves
-				//buildMoves(object.movePool)
+				object.moves,
+				object.movesPool
 			);
 		} catch (e) {
 			console.log('bad monster build');

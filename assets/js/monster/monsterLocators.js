@@ -28,7 +28,6 @@
 
 import { generateRandomIndex } from './utils';
 import { MonsterBuilder } from './modles/builders/monsterBuilder';
-import { MoveLocator } from './moveLocator';
 
 export class MonsterLocator {
 	constructor(api) {
@@ -36,7 +35,7 @@ export class MonsterLocator {
 		this.options = {
 			protocol: 'https',
 			versionPath: '/api/v2/',
-			cache: false,
+			cache: true,
 			timeout: 5 * 1000 // 5s
 		};
 		this.pokemonApi = api;
@@ -58,6 +57,7 @@ export class MonsterLocator {
 						resolve(response.count);
 					});
 			} else {
+				console.log('cached');
 				resolve(this.pokemonCount);
 			}
 		});

@@ -1,6 +1,5 @@
 export class Move {
-	constructor(id, name, type) {
-		this.id = id;
+	constructor(name, type) {
 		this.name = name;
 		this.type = type;
 	}

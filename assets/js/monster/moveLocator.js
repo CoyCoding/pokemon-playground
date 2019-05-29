@@ -1,4 +1,5 @@
 import { MoveBuilder } from './modles/builders/moveBuilder';
+import { shuffle } from './utils';
 
 export class MoveLocator {
 	constructor(api) {
@@ -6,18 +7,31 @@ export class MoveLocator {
 		this.options = {
 			protocol: 'https',
 			versionPath: '/api/v2/',
-			cache: false,
+			cache: true,
 			timeout: 5 * 1000 // 5s
 		};
 		this.pokemonApi = api;
 	}
 
-	async findMove(id) {
-		await this.pokemonApi.getMoveByName(id).then(function(response) {
-			console.log(response);
-			return MoveBuilder.buildMove(response.name, response.type);
+	findMove(id) {
+		return new Promise(resolve => {
+			this.pokemonApi.getMoveByName(id).then(response => {
+				resolve(MoveBuilder.buildMove(response));
+			});
 		});
 	}
+	locateRandomMoveSet(numOfMoves, moveList) {
+		return new Promise(resolve => {
+			var newList = shuffle(moveList, numOfMoves).slice(0, numOfMoves);
+			for (let i = 0; i < newList.length; i++) {
+				this.findMove(moveList[i].move.name).then(res => {
+					newList[i] = res;
+				});
+			}
+			resolve(newList);
+		});
+	}
+
 	// findMoveById: function(id) {
 	// 	const foundMove = moveList.find(move => {
 	// 		return id === move.id;
@@ -34,13 +48,7 @@ export class MoveLocator {
 	// 	return MoveBuilder.buildMove(this.findMoveByIndex(index));
 	// },
 	//
-	// findRandomMoveSet: function(numOfMoves, moveList) {
-	// 	var moveList = shuffle(moveList, numOfMoves).slice(0, numOfMoves);
-	// 	for (let i = 0; i < moveList.length; i++) {
-	// 		moveList[i] = this.findMoveById(moveList[i]);
-	// 	}
-	// 	return moveList;
-	// },
+
 	//
 	// moveListLength: function() {
 	// 	return moveList.length;

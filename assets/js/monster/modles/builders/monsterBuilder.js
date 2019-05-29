@@ -51,7 +51,7 @@ function buildTypes(arr) {
 	return typeArray;
 }
 
-function buildMoves(arr) {
+function buildMovesSet(arr) {
 	var moveArray = [];
 	arr.forEach(move => {
 		moveArray.push(MoveBuilder.buildMove(move));

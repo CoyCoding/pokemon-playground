@@ -41,7 +41,8 @@ export const MonsterDom = {
 	setMoveNodes: function(moveArray, node) {
 		//appends a move array to a DOM node
 		moveArray.forEach(move => {
-			this.setMoveNode(move, node);
+			console.log(move.move);
+			this.setMoveNode(move.move, node);
 		});
 	},
 

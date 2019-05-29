@@ -40,7 +40,7 @@ export class MonsterLocator {
 			timeout: 5 * 1000 // 5s
 		};
 		this.pokemonApi = api;
-		this.pokemonCount = this.getPokemonCount();
+		this.pokemonCount = 807;
 	}
 
 	api() {
@@ -53,7 +53,6 @@ export class MonsterLocator {
 			await this.pokemonApi
 				.getPokemonSpeciesList({ limit: 1, offset: 0 })
 				.then(response => {
-					console.log(response);
 					this.pokemonCount = response.count;
 				});
 			return this.pokemonCount;
@@ -63,19 +62,25 @@ export class MonsterLocator {
 	}
 
 	async locateRandomPokemon() {
-		console.log('in random pokemon');
+		console.log('locate random');
+		let monster;
 		await this.getPokemonCount().then(res => {
 			let index = generateRandomIndex(res);
-			let monster = MonsterBuilder.buildMonster(this.findMonsterByIndex(index));
+			this.findMonsterByIndex(index, res).then(response => {
+				monster = MonsterBuilder.buildMonster(response);
+			});
+			return monster;
 		});
 	}
 
-	async findMonsterByIndex(index) {
+	async findMonsterByIndex(index, count) {
 		console.log(index);
-		if (index < this.getPokemonCount() && index >= 0) {
-			await this.pokemonApi.getPokemonByName(index).then(function(response) {
-				console.log(response);
+		var test;
+		if (index < count && index >= 0) {
+			await this.pokemonApi.getPokemonByName(index).then(res => {
+				test = res;
 			});
+			return test;
 		} else {
 			throw new Error('bad Index');
 		}

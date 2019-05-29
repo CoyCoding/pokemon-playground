@@ -12,7 +12,10 @@ var monsterLocator = new MonsterLocator(new PokemonApi.Pokedex(options));
 
 const pokeballBtn = document.getElementsByClassName('ball-btn');
 initPokeballs();
-monsterLocator.locateRandomPokemon();
+monsterLocator.locateRandomPokemon().then(monster => {
+	console.log('inside');
+	console.log(monster);
+});
 
 function initPokeballs() {
 	for (let i = 0; i < pokeballBtn.length; i++) {

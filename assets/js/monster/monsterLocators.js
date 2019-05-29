@@ -28,6 +28,7 @@
 
 import { generateRandomIndex } from './utils';
 import { MonsterBuilder } from './modles/builders/monsterBuilder';
+import { MoveLocator } from './moveLocator';
 
 export class MonsterLocator {
 	constructor(api) {
@@ -49,10 +50,12 @@ export class MonsterLocator {
 	async getPokemonCount() {
 		console.log('running');
 		if (!Number.isInteger(this.pokemonCount)) {
-			await this.pokemonApi.getPokemonSpeciesList().then(response => {
-				console.log(response);
-				this.pokemonCount = response.count;
-			});
+			await this.pokemonApi
+				.getPokemonSpeciesList({ limit: 1, offset: 0 })
+				.then(response => {
+					console.log(response);
+					this.pokemonCount = response.count;
+				});
 			return this.pokemonCount;
 		} else {
 			return this.pokemonCount;
@@ -63,15 +66,15 @@ export class MonsterLocator {
 		console.log('in random pokemon');
 		await this.getPokemonCount().then(res => {
 			let index = generateRandomIndex(res);
-			return MonsterBuilder.buildMonster(this.findMonsterByIndex(index));
+			let monster = MonsterBuilder.buildMonster(this.findMonsterByIndex(index));
 		});
 	}
 
 	async findMonsterByIndex(index) {
-		if (index < 962 && index >= 0) {
+		console.log(index);
+		if (index < this.getPokemonCount() && index >= 0) {
 			await this.pokemonApi.getPokemonByName(index).then(function(response) {
 				console.log(response);
-				return response;
 			});
 		} else {
 			throw new Error('bad Index');

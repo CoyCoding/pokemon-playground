@@ -3,7 +3,7 @@ import { TypeMap } from '../data/typeMap';
 //Type takes id and the type to build a type object
 export class Type {
 	constructor(slot, name) {
-		this.slot= slot;
+		this.slot = slot;
 		this.name = name;
 	}
 

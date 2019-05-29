@@ -11,7 +11,8 @@ export const MonsterBuilder = {
 				buildTypes(object.types),
 				buildImgSrc(object.name),
 				object.learnableMoves,
-				buildMoves(object.movePool)
+				object.moves
+				//buildMoves(object.movePool)
 			);
 		} catch (e) {
 			console.log('bad monster build');

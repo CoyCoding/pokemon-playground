@@ -65,8 +65,10 @@
     "@babel/plugin-proposal-decorators": "^7.1.6",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-transform-async-to-generator": "^7.1.0",
+    "draggabilly": "^2.2.0",
     "gulp-pug": "^4.0.1",
     "jquery": "^3.4.1",
+    "jquery-bridget": "^2.0.1",
     "pokeapi-js-wrapper": "^1.1.1",
     "webpack-dev-server": "^3.1.14"
   },

@@ -31,13 +31,6 @@ import { MonsterBuilder } from './modles/builders/monsterBuilder';
 
 export class MonsterLocator {
 	constructor(api) {
-		var self = this;
-		this.options = {
-			protocol: 'https',
-			versionPath: '/api/v2/',
-			cache: true,
-			timeout: 5 * 1000 // 5s
-		};
 		this.pokemonApi = api;
 		this.pokemonCount = null;
 	}

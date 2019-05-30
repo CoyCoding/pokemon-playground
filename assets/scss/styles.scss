@@ -121,12 +121,11 @@ h1 {
 
             .ball-line {
               position: absolute;
-              width: 150%;
-              height: 74%;
+              width: 136%;
+              height: 112%;
+              transform: rotatex(107deg);
               border-radius: 50%;
-              top: -10%;
-              left: -24%;
-              border-bottom: #161616 solid 20px;
+              background: radial-gradient(circle at 50% 100%, #ffffff00 50%, #29292994 57%, #000000 44%, #323232 65%, #ffffff00 69%), radial-gradient(circle at 50% 100%, rgba(62,62,62,0) 44%, #ff4b4b 47%, #5b2c2c 56%, #3c3c3c 41%, #161414 37%, #fff 72%, rgba(251, 251, 251, 0.17) 75%, rgba(255, 255, 255, 0) 100%);
             }
             .shine{
               padding-top: 100%;
@@ -143,23 +142,23 @@ transform: translateX(21%) translateY(-29%) skewX(20deg);
 filter: blur(6px);
             }
             .ball-btn {
-              width: 25%;
-              height: 25%;
+              width: 26%;
+                  height: 26%;
               top: 49%;
               position: absolute;
               border-radius: 50%;
               overflow: hidden;
               max-width: 373.33px;
-              background: radial-gradient(circle at 50% 50%, #d7d7d7 49%, rgb(0, 0, 0) 60%, rgb(86, 85, 85) 35%, #fff 100%);
+                  background: radial-gradient(circle at 50% 50%, #d7d7d7 41%, #000 53%, #1c1c1c 58%, #000 100%, black 100%);
               display: flex;
               justify-content: center;
               align-items: center;
-              border: solid black 15px;
               box-shadow: black 0 0 1vw 0;
               cursor: pointer;
+              box-sizing: content-box;
 
               &:hover {
-                background: radial-gradient(circle at 50% 50%, #fd8f8f 49%, #000 60%, #565555 35%, #202020 100%);
+                        background: radial-gradient(circle at 50% 50%, #b75151 41%, #000 53%, #1c1c1c 58%, #000 100%, black 100%);
               }
             }
           }

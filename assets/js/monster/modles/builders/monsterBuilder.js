@@ -7,9 +7,9 @@ export const MonsterBuilder = {
 		try {
 			return new Monster(
 				object.id,
-				object.name,
+				object.species.name,
 				buildTypes(object.types),
-				buildImgSrc(object.name),
+				buildImgSrc(object.species.name),
 				object.moves,
 				object.movesPool
 			);
@@ -62,7 +62,7 @@ function buildMovesSet(arr) {
 function buildImgSrc(name) {
 	return (
 		'https://www.smogon.com/dex/media/sprites/xy/' +
-		name.replace(/-/g, '_').toLocaleLowerCase() +
+		name.toLocaleLowerCase() +
 		'.gif'
 	);
 }

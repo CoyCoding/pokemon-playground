@@ -22,11 +22,18 @@ export class MoveLocator {
 	}
 	locateRandomMoveSet(numOfMoves, moveList) {
 		return new Promise(resolve => {
-			var newList = shuffle(moveList, numOfMoves).slice(0, numOfMoves);
-			for (let i = 0; i < newList.length; i++) {
-				newList[i] = this.findMove(moveList[i].move.name);
+			if (moveList <= 4) {
+				for (let i = 0; i < moveList.length; i++) {
+					moveList[i] = this.findMove(moveList[i].move.name);
+				}
+				resolve(moveList);
+			} else {
+				var newList = shuffle(moveList, numOfMoves).slice(0, numOfMoves);
+				for (let i = 0; i < newList.length; i++) {
+					newList[i] = this.findMove(moveList[i].move.name);
+				}
+				resolve(newList);
 			}
-			resolve(newList);
 		});
 	}
 

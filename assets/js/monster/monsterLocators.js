@@ -69,7 +69,7 @@ export class MonsterLocator {
 	findMonsterByIndex(index) {
 		return new Promise(resolve => {
 			if (index < this.pokemonCount && index >= 0) {
-				this.pokemonApi.getPokemonByName('thundurus-incarnate').then(res => {
+				this.pokemonApi.getPokemonByName(index).then(res => {
 					resolve(res);
 				});
 			} else {

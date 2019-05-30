@@ -65,9 +65,5 @@ function buildMovesSet(arr) {
 }
 
 function buildImgSrc(name) {
-	return (
-		'https://www.smogon.com/dex/media/sprites/xy/' +
-		name.toLocaleLowerCase() +
-		'.gif'
-	);
+	return NameResolver.pokemonImg(name);
 }

@@ -1,3 +1,5 @@
 export const NameMap = {
-	'thundurus-incarnate': 'thundurus'
+	'thundurus-incarnate': 'thundurus',
+	'shaymin-land': 'shaymin',
+	'tornadus-incarnate': 'tornadus'
 };

@@ -38,8 +38,15 @@ export const MonsterDom = {
 	},
 
 	setMoveNodes: function(moveArray, node) {
+		console.log(moveArray);
 		for (let i = 0; i < moveArray.length; i++) {
-			this.setMoveNode(moveArray[i], node);
+			console.log(moveArray[i]);
+			console.log(moveArray[i] === undefined);
+			if (moveArray[i] !== undefined) {
+				this.setMoveNode(moveArray[i], node);
+			} else {
+				this.setMoveNode({ name: '', type: '-' }, node);
+			}
 		}
 	},
 

@@ -48,7 +48,6 @@ export class MonsterLocator {
 
 	getPokemonCount() {
 		return new Promise(resolve => {
-			console.log('running');
 			if (!Number.isInteger(this.pokemonCount)) {
 				this.pokemonApi
 					.getPokemonSpeciesList({ limit: 1, offset: 0 })
@@ -64,26 +63,26 @@ export class MonsterLocator {
 	}
 
 	locateRandomPokemon() {
-		console.log('locate random');
 		return new Promise(resolve => {
 			this.getPokemonCount().then(res => {
 				this.findMonsterByIndex(generateRandomIndex(res)).then(res => {
 					var monster = MonsterBuilder.buildMonster(res);
+					console.log(monster);
 					resolve(monster);
 				});
 			});
 		});
 	}
 
-	async findMonsterByIndex(index) {
-		var test;
-		if (index < this.pokemonCount && index >= 0) {
-			await this.pokemonApi.getPokemonByName(index).then(res => {
-				test = res;
-			});
-			return test;
-		} else {
-			throw new Error('bad Index');
-		}
+	findMonsterByIndex(index) {
+		return new Promise(resolve => {
+			if (index < this.pokemonCount && index >= 0) {
+				this.pokemonApi.getPokemonByName(index).then(res => {
+					resolve(res);
+				});
+			} else {
+				throw new Error('bad Index');
+			}
+		});
 	}
 }

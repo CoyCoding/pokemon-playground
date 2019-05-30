@@ -21,14 +21,18 @@ export class MoveLocator {
 		});
 	}
 	locateRandomMoveSet(numOfMoves, moveList) {
+		var newList = [];
 		return new Promise(resolve => {
-			if (moveList <= 4) {
+			if (moveList.length <= 4) {
 				for (let i = 0; i < moveList.length; i++) {
-					moveList[i] = this.findMove(moveList[i].move.name);
+					if (moveList[i] !== undefined) {
+						newList[i] = this.findMove(moveList[i].move.name);
+					} else {
+					}
 				}
-				resolve(moveList);
+				resolve(newList);
 			} else {
-				var newList = shuffle(moveList, numOfMoves).slice(0, numOfMoves);
+				newList = shuffle(moveList, numOfMoves).slice(0, numOfMoves);
 				for (let i = 0; i < newList.length; i++) {
 					newList[i] = this.findMove(moveList[i].move.name);
 				}

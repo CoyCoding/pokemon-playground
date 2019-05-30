@@ -1,15 +1,16 @@
 import { Monster } from '../monster';
 import { TypeBuilder } from './typeBuilder';
 import { MoveBuilder } from './moveBuilder';
+import { NameResolver } from '../.././nameResolver';
 
 export const MonsterBuilder = {
 	buildMonster: function(object) {
 		try {
 			return new Monster(
 				object.id,
-				object.species.name,
+				buildName(object.name),
 				buildTypes(object.types),
-				buildImgSrc(object.species.name),
+				buildImgSrc(buildName(object.name)),
 				object.moves,
 				object.movesPool
 			);
@@ -42,6 +43,10 @@ export const MonsterBuilder = {
 		}
 	}
 };
+
+function buildName(name) {
+	return NameResolver.pokemonName(name);
+}
 
 function buildTypes(arr) {
 	var typeArray = [];

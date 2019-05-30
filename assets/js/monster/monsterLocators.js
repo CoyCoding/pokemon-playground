@@ -39,7 +39,7 @@ export class MonsterLocator {
 			timeout: 5 * 1000 // 5s
 		};
 		this.pokemonApi = api;
-		this.pokemonCount = 807;
+		this.pokemonCount = null;
 	}
 
 	api() {
@@ -67,7 +67,6 @@ export class MonsterLocator {
 			this.getPokemonCount().then(res => {
 				this.findMonsterByIndex(generateRandomIndex(res)).then(res => {
 					var monster = MonsterBuilder.buildMonster(res);
-					console.log(monster);
 					resolve(monster);
 				});
 			});

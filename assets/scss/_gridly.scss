@@ -1,0 +1,31 @@
+/* jQuery Gridly
+ * Copyright 2015 Kevin Sylvestre
+ * 1.2.9
+ */
+.gridly{
+  position: relative;
+  height: 100vh;
+  .brick{
+    position: absolute;
+    width: 370px;
+    &[data-ss-colspan="2"]{
+    }
+  }
+
+  .brick.small {
+    height: 425px;
+  }
+
+}
+
+@media only screen and (max-width: 768px){
+  .gridly{
+            margin: -18px 0 36px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .gridly{
+    width: 75%;
+    margin: 0 auto;
+  }
+}

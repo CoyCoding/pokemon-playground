@@ -69,6 +69,8 @@
     "gulp-pug": "^4.0.1",
     "jquery": "^3.4.1",
     "jquery-bridget": "^2.0.1",
+    "jquery-shapeshift": "^1.0.1",
+    "jquery-ui": "^1.12.1",
     "pokeapi-js-wrapper": "^1.1.1",
     "webpack-dev-server": "^3.1.14"
   },

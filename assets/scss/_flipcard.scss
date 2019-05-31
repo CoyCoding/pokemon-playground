@@ -1,8 +1,5 @@
 .flip-card {
   background-color: transparent;
-  width: 300px;
-  height: 300px;
-  perspective: 1000px;
   transform: rotateY(180deg);
 }
 
@@ -22,20 +19,16 @@
 
 .flip-card-front, .flip-card-back {
   position: absolute;
-  width: 87%;
-  height: 90%;
+  width: 94%;
+      height: 95%;
   backface-visibility: hidden;
 }
 
 .flip-card-front {
-  background-color: #bbb;
-  color: black;
   background: radial-gradient(circle at 50% 50%, white 34%, blue 95%);
 }
 
 .flip-card-back {
-  background-color: #2980b9;
-  color: white;
   transform: rotateY(180deg);
 }
 

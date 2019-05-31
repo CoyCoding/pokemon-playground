@@ -2,18 +2,7 @@ import { MonsterDom } from './monster/monsterDom';
 import { MonsterLocator } from './monster/monsterLocators';
 import { MoveLocator } from './monster/moveLocator';
 const PokemonApi = require('pokeapi-js-wrapper');
-// import Draggabilly from 'draggabilly';
-// const jquery = require('jquery');
-// window.$ = window.jQuery = jquery;
-const shapeshift = require('./shifter');
-
-$('.grid').shapeshift({
-	align: 'center',
-	gutterX: 0,
-	gutterY: 0,
-	paddingX: 0,
-	handle: false
-});
+import { shapeshiftInit } from './monster/shifterSettings';
 
 const options = {
 	protocol: 'https',
@@ -26,9 +15,8 @@ var monsterLocator = new MonsterLocator(new PokemonApi.Pokedex(options));
 var moveLocator = new MoveLocator(monsterLocator.api());
 const pokeballBtn = document.getElementsByClassName('ball-btn');
 
+shapeshiftInit();
 initPokeballs();
-
-// console.log(monsterLocator.locateRandomPokemon());
 
 function initPokeballs() {
 	for (let i = 0; i < pokeballBtn.length; i++) {
@@ -37,6 +25,7 @@ function initPokeballs() {
 
 	function placePokemonInBall() {
 		this.removeEventListener('click', placePokemonInBall);
+		getClosest(this, '.wrapper').classList.add('flip');
 		let currentImgNode = getClosest(this, '.poke-img');
 		let currentNameNode = getClosest(this, '.name-wrapper');
 		let currentTypeNode = getClosest(this, '.poke-types');
@@ -61,7 +50,10 @@ function initPokeballs() {
 	}
 
 	function getClosest(node, className) {
-		return node.closest('.monster-info').querySelector(className);
+		if (className === '.wrapper') {
+			return node.closest('.wrapper');
+		}
+		return node.closest('.wrapper').querySelector(className);
 	}
 
 	function getCurrentPokeBall(node) {

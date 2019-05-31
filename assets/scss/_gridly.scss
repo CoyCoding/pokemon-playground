@@ -15,20 +15,30 @@
 
 }
 
-@media only screen and (max-width: 768px){
-  .grid{
-            margin: -18px 0 36px;
-  }
-}
 @media only screen and (max-width: 1920px) and (min-width: 1500px) {
   .grid{
     width: 75%;
-    margin: 0 auto;
   }
 }
+
 @media only screen and (max-width: 1500px) and (min-width: 1200px) {
   .grid{
-        width: 93%;
-  margin: 0 auto;
+        width: 95%;
   }
+}
+@media only screen and (max-width: 1200px){
+  .grid{
+        margin: 0 128px;
+  }
+}
+@media only screen and (max-width: 768px){
+#app{
+  .grid{
+          margin: 0px -23px -15px;
+
+  }
+  .nav{
+    width: 74px;
+  }
+}
 }

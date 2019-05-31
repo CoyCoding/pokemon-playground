@@ -7,7 +7,7 @@ const PokemonApi = require('pokeapi-js-wrapper');
 // window.$ = window.jQuery = jquery;
 const shapeshift = require('./shifter');
 
-$('.gridly').shapeshift({
+$('.grid').shapeshift({
 	align: 'center',
 	gutterX: 0,
 	gutterY: 0,

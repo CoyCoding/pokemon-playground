@@ -2,71 +2,81 @@ $dark-font: #454545;
 $light-font: #fff;
 
 .fire{
-  background: red !important;
+  background: linear-gradient(#ff6400, #880000) !important;
   color: white !important;
 }
 .fairy{
-
+  background: linear-gradient(gainsboro, pink) !important;
+  color: white !important;
 }
 .flying{
-
+  background: linear-gradient(#ffffb2, #6c6cea) !important;
+  color: white !important;
 }
 .ghost{
-
+  background: linear-gradient(purple, #2b002b) !important;
+  color: white !important;
 }
 .grass{
-      background: linear-gradient(to top, #333, #156900 38%, #55a95f, #006c12) !important;
+  background: linear-gradient(#01bd01, #004600) !important;
   color: white !important;
 }
 .dark{
-  background: purple !important;
-  color: white !important;
+
+  background: linear-gradient(#767676,#373737) !important;
+    color: white !important;
 }
 .dragon{
-  background: blue !important;
+  background: linear-gradient(#ca72fb, #7d03cc) !important;
   color: white !important;
 }
 
 .fighting{
-  background: linear-gradient(to top, #333, #610000 38%, #a95555, #3d0000) !important;
+  background: linear-gradient(#c05e5e, #821111) !important;
   color: white !important;
 }
 .psychic{
-  background: purple !important;
-  color: white !important;
+
+background: linear-gradient(#ff07cf, #cfd5ff) !important;
+color: white !important;
 }
 
+
 .bug{
-  background: green !important;
+  background: linear-gradient(lime, green) !important;
   color: white !important;
 }
 
 .electric{
-  background: yellow !important;
+  background: linear-gradient(#ffffbf, #f3de36) !important;
   color: white !important;
 }
 
 .ground{
-  background: linear-gradient(to top, #603813, #b29f94 38%, #e3cfc1, #b29f94) !important;
-  color: $dark-font !important;
+  background: linear-gradient(#c1a99d, #7b6a60) !important;
+  color: #ffffff !important;
 }
 .ice{
-
+  background: linear-gradient(#d8d7d7, #7171ff) !important;
+  color: white !important;
 }
 .normal{
-      background: linear-gradient(#ffecd2, #fcb69f);
-      color: white;
+      background: linear-gradient(#ffecd2, #fcb69f) !important;
+      color: white !important;
 }
 .poison{
-
+  background: linear-gradient(pink,purple) !important;
+  color: white !important;
 }
 .rock{
-
+  background: linear-gradient(#b06666,#220101) !important;
+  color: white !important;
 }
 .steel{
-
+  background: linear-gradient(#d1d1d1,#6a6a6a) !important;
+  color: white !important;
 }
 .water{
-  background: linear-gradient(to top, #333, #0400ff 38%, #5564a9, #0037ff) !important;
+    background: linear-gradient(blue, #00004e) !important;
   color: white !important;
 }

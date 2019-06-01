@@ -1,6 +1,6 @@
 export function shapeshiftInit() {
 	$('.grid').shapeshift({
-		align: 'left',
+		align: 'center',
 		gutterX: 0,
 		gutterY: 10,
 		paddingX: 0,

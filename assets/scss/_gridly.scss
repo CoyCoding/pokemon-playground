@@ -1,10 +1,7 @@
-/* jQuery Gridly
- * Copyright 2015 Kevin Sylvestre
- * 1.2.9
- */
 .grid{
   position: relative;
   height: 100vh;
+  transition: margin 1s ease-in;
   .brick{
     position: absolute;
     width: 370px;
@@ -14,10 +11,10 @@
   }
 
 }
-
 @media only screen and (max-width: 1920px) and (min-width: 1500px) {
   .grid{
     width: 75%;
+    margin: 0 0% 0 10%;
   }
 }
 
@@ -28,13 +25,14 @@
 }
 @media only screen and (max-width: 1200px){
   .grid{
-        margin: 0 128px;
+    margin: 0px 0% 0 2%;
+
   }
 }
 @media only screen and (max-width: 768px){
 #app{
   .grid{
-          margin: 0px -23px -15px;
+              margin: 0px 0 0px 0%;
 
   }
   .nav{

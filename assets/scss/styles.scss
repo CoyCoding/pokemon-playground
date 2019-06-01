@@ -209,6 +209,7 @@
         row-gap: 10px;
         padding: 10px;
         height: 42%;
+        transition: opacity .1s ease-in-out;
 
         &.loaded {
           opacity: 1;
@@ -237,6 +238,8 @@
           display: flex;
           background: white;
           padding-left: 10px;
+          opacity: inherit;
+          transition: opacity 1s ease-in-out;
         }
 
         .move-type {
@@ -268,6 +271,8 @@
           -webkit-align-items: center;
           align-items: center;
           padding-right: 10px;
+          opacity: inherit;
+          transition: opacity 1s ease-in-out;
         }
 
         .move-type::before {

@@ -63,7 +63,7 @@
     },
     "./assets/js/monster/data/nameCorrectionMap.js": function(module, __webpack_exports__, __webpack_require__) {
         "use strict";
-        eval("/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"a\", function() { return NameMap; });\nconst NameMap = {\n  'thundurus-incarnate': 'thundurus',\n  'shaymin-land': 'shaymin',\n  'tornadus-incarnate': 'tornadus',\n  'darmanitan-standard': 'darmanitan'\n};\n\n//# sourceURL=webpack:///./assets/js/monster/data/nameCorrectionMap.js?");
+        eval("/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"a\", function() { return NameMap; });\nconst NameMap = {\n  'thundurus-incarnate': 'thundurus',\n  'shaymin-land': 'shaymin',\n  'tornadus-incarnate': 'tornadus',\n  'darmanitan-standard': 'darmanitan',\n  'meloetta-aria': 'meloetta',\n  'deoxys-normal': 'deoxys'\n};\n\n//# sourceURL=webpack:///./assets/js/monster/data/nameCorrectionMap.js?");
     },
     "./assets/js/monster/data/typeMap.js": function(module, __webpack_exports__, __webpack_require__) {
         "use strict";

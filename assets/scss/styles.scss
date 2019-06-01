@@ -178,6 +178,7 @@
           background: red;
           margin-right: 10px;
           margin-left: 10px;
+          text-shadow: black 0 0 5px;
           border-top: solid #a5a5a5 2px;
           border-left: solid #888888 1px;
           border-right: solid #888888 1px;
@@ -194,7 +195,7 @@
         -webkit-border-top-left-radius: 8px;
         -moz-border-radius-topleft: 8px;
         border-top-left-radius: 8px;
-        background: #9a90ed;
+        background: #efefef;
         width: 100%;
         display: -ms-grid;
         display: grid;

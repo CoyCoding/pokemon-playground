@@ -25,7 +25,7 @@ function initPokeballs() {
 
 	function placePokemonInBall() {
 		this.removeEventListener('click', placePokemonInBall);
-		getClosest(this, '.wrapper').classList.add('flip');
+		getCurrentPokeBall(this).classList.add('opened');
 		let currentImgNode = getClosest(this, '.poke-img');
 		let currentNameNode = getClosest(this, '.name-wrapper');
 		let currentTypeNode = getClosest(this, '.poke-types');
@@ -42,7 +42,7 @@ function initPokeballs() {
 						MonsterDom.setMoveNodes(monster.movePool, currentMoveNode);
 						MonsterDom.setImageNode(monster.img, currentImgNode);
 						initNodes([currentNameNode, currentTypeNode, currentMoveNode]);
-						getCurrentPokeBall(this).classList.add('opened');
+						getClosest(this, '.wrapper').classList.add('flip');
 						currentImgNode.classList.add('opened');
 					});
 			});

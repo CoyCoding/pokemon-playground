@@ -141,7 +141,7 @@
           text-transform: capitalize;
           font-weight: 700;
           opacity: 0;
-          transition: opacity 1s ease-in-out 1s;
+          transition: opacity 1s ease-in-out .5s;
 
           &.loaded {
             opacity: 1;
@@ -162,7 +162,7 @@
         flex-wrap: wrap;
         opacity: 0;
         height: 1%;
-        transition: opacity 1s ease-in-out 1s;
+        transition: opacity 1s ease-in-out .5s;
         z-index: 1;
 
         &.loaded {
@@ -240,7 +240,7 @@
           background: white;
           padding-left: 10px;
           opacity: inherit;
-          transition: opacity 1s ease-in-out;
+          transition: opacity 1s ease-in-out .5s;
         }
 
         .move-type {
@@ -273,7 +273,7 @@
           align-items: center;
           padding-right: 10px;
           opacity: inherit;
-          transition: opacity 1s ease-in-out;
+          transition: opacity 1s ease-in-out .5s;
         }
 
         .move-type::before {

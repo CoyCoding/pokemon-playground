@@ -41,6 +41,7 @@ export function shapeshiftInit() {
 			animationSpeed: 225,
 			animationThreshold: 100,
 			dragClone: false,
+			dragLocation: 'mouse',
 			deleteClone: true,
 			dragRate: 100,
 			dragWhitelist: '*',
@@ -569,6 +570,13 @@ export function shapeshiftInit() {
 					startx = e.pageX;
 					starty = e.pageY;
 					console.log(startx);
+					document.addEventListener(
+						'mouseup',
+						function() {
+							document.removeEventListener('mousemove', onMouseUpdate, false);
+						},
+						false
+					);
 				}
 
 				function onMouseUpdate(e) {
@@ -592,6 +600,7 @@ export function shapeshiftInit() {
 				function getMouseY() {
 					return y;
 				}
+
 				var $clone,
 					$container,
 					$placeholder,

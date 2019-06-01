@@ -11,28 +11,36 @@
   }
 
 }
+
+//widescreen
 @media only screen and (max-width: 1920px) and (min-width: 1500px) {
   .grid{
     width: 75%;
-    margin: 0 0% 0 10%;
+    margin: 0px 0% 0 12%;
   }
 }
 
+//laptop
 @media only screen and (max-width: 1500px) and (min-width: 1200px) {
   .grid{
         width: 95%;
+        margin: 0px 0% 0 2.5%;
   }
 }
+
+//ipad pro
 @media only screen and (max-width: 1200px){
   .grid{
-    margin: 0px 0% 0 2%;
+        margin: 60px 0% 0 -.5%;
 
   }
 }
+
+//ipad
 @media only screen and (max-width: 768px){
 #app{
   .grid{
-              margin: 0px 0 0px 0%;
+                    margin: 60px 0 0px -.5%;
 
   }
   .nav{

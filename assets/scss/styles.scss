@@ -3,11 +3,12 @@
 @import "reset";
 @import "flipcard";
 @import "gridly";
+@import "animation";
 
 #app {
   height: 100vh;
   overflow-x: hidden;
-
+          background: linear-gradient(45deg, red 25%, #727272 31%, rgba(255,255,255,0) 15%, rgba(255,255,255,0)),linear-gradient(-45deg, red 25%, #737373 31%, rgba(4,0,255,0) 15%, white);
   .monster {
     height: 100%;
     width: 100%;
@@ -42,7 +43,10 @@
         }
 
         &.opened {
-          display: none;
+          animation: shake 1s linear infinite alternate;
+        }
+        &.opening{
+
         }
 
         .ball-line {
@@ -296,8 +300,13 @@
     background: #7f8ca0;
     position: fixed;
     top: 0;
-    right: 0;
-    width: 75px;
-    height: 100%;
+    width: 100%;
+    height: 0%;
+    .menu{
+      position: absolute;
+      margin: 21px;
+      font-size: 40px;
+      right: 16px;
+    }
   }
 }

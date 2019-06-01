@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
 @import "type-backgrounds";
 @import "reset";
-@import "gridly";
 @import "flipcard";
+@import "gridly";
 
 #app {
   height: 100vh;
@@ -284,4 +284,32 @@
     width: 75px;
     height: 100%;
   }
+}
+
+@media only screen and (max-width: 1920px) and (min-width: 1500px) {
+  .grid{
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 1500px) and (min-width: 1200px) {
+  .grid{
+        width: 95%;
+  }
+}
+@media only screen and (max-width: 1200px){
+  .grid{
+        margin: 0 128px;
+  }
+}
+@media only screen and (max-width: 768px){
+#app{
+  .grid{
+          margin: 0px -23px -15px;
+
+  }
+  .nav{
+    width: 74px;
+  }
+}
 }
